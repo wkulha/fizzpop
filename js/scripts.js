@@ -7,7 +7,9 @@ let error = 'Please enter a number'
 let fizzPop = function(number) {
   let result = []
   for(let i = 1; i <= number; i++) {
-    if (i % 3 === 0 ) {
+    if (i % 15 === 0) {
+      result.push('FIZZ-POP')
+    } else if (i % 3 === 0 ) {
       result.push('FIZZ')
     } else if (i % 5 === 0) {
       result.push('POP');
@@ -15,7 +17,7 @@ let fizzPop = function(number) {
       result.push(i)
     }
   }
-  console.log(result);
+  return result.join(", ");
 }
 
 //User logic
@@ -28,8 +30,10 @@ $(document).ready(function() {
     } else {
       $('.error_message').empty();
       let userNumber = parseInt(userInput);
-      fizzPop(userNumber);
-      console.log(parseInt(userNumber))
+      let results = fizzPop(userNumber);
+      console.log(results);
+      $('.fizz_pop_output').empty();
+      $('.fizz_pop_output').text(results);
     }
   })
 })
