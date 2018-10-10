@@ -9,10 +9,10 @@ let fizzPop = function(number) {
   for(let i = 1; i <= number; i++) {
     if (i % 3 === 0 ) {
       result.push('FIZZ')
-    } else if (i % 3 != 0) {
+    } else if (i % 5 === 0) {
+      result.push('POP');
+    } else if (i % 3 != 0 || i % 5 != 0) {
       result.push(i)
-    } else {
-      console.log(result)
     }
   }
   console.log(result);
