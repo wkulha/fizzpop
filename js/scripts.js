@@ -11,7 +11,8 @@ $(document).ready(function() {
       $('.error_message').text(error)
     } else {
       $('.error_message').empty();
-      console.log(parseInt(userInput))
+      let userNumber = parseInt(userInput);      
+      console.log(parseInt(userNumber))
     }
   })
 })
